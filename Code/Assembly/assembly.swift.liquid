@@ -1,0 +1,47 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Swinject
+import SwinjectStoryboard
+import ViperKit
+
+class {{ module_info.name }}ModuleAssembly: Assembly {
+  func assemble(container: Container) {
+    // View
+    container.storyboardInitCompleted({{ module_info.name }}ViewController.self, initCompleted: { (r, c) in
+      c.output = r.resolve({{ module_info.name }}ModuleInput.self, argument: c) as! {{ module_info.name }}ViewOutput
+    })
+
+    // Presenter
+    container.register({{ module_info.name }}ModuleProtocol.self) { (r, c: {{ module_info.name }}ViewController) in
+      let presenter =  {{ module_info.name }}Presenter()
+      presenter.view = c
+      return presenter
+    }.initCompleted { (r, p) in
+      let p = p as! {{ module_info.name }}Presenter
+
+      p.router = r.resolve({{ module_info.name }}RouterInput.self, argument: p.view as! TransitionHandler)
+      p.dataSource = r.resolve({{ module_info.name }}DataSourceDelegate.self, argument: p as {{ module_info.name }}DataSourceDelegate)
+    }
+
+    // Router
+    container.register({{ module_info.name }}RouterInput.self) { (r, v: TransitionHandler) in
+      let router = {{ module_info.name }}Router()
+      router.transitionHandler = v
+      return router
+    }
+
+    // DataSource
+    container.register({{ module_info.name }}DataSourceInput.self) { (r, p: {{ module_info.name }}DataSourceDelegate) in
+      let dataSource =  {{ module_info.name }}DataSource()
+      dataSource.output = p
+      return dataSource
+    }
+  }
+}

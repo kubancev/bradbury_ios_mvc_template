@@ -1,0 +1,29 @@
+# Template information section
+name: bradburylab_mvc
+summary: bradburylab_mvc
+author: BradburyLab
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+
+code_files:
+# View layer
+- {name: View/ViewDelegate.swift, path: Code/View/view_delegate.swift.liquid}
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/ModuleProtocol.swift, path: Code/Presenter/module_protocol.swift.liquid}
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# DataSource layer
+- {name: DataSource/DataSourceProtocol.swift, path: Code/DataSource/data_source_protocol.swift.liquid}
+- {name: DataSource/DataSourceOutput.swift, path: Code/DataSource/data_source_delegate.swift.liquid}
+- {name: DataSource/DataSource.swift, path: Code/DataSource/data_source.swift.liquid}
+
+# Router layer
+- {name: Router/Coordinator.swift, path: Code/Router/coordinator.swift.liquid}
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+
+# Assembly
+- {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
