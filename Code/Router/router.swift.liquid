@@ -7,5 +7,9 @@
 //
 
 class {{ module_info.name }}Router: Router {
-  
+    weak var interfaceManager: DefaultInterfaceManager?
+}
+
+extension {{ module_info.name }}Router: {{ module_info.name }}RouterProtocol {
+	
 }

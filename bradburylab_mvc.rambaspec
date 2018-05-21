@@ -2,7 +2,7 @@
 name: bradburylab_mvc
 summary: bradburylab_mvc
 author: BradburyLab
-version: 1.0.0
+version: 1.1.0
 license: MIT
 
 # The declarations for code files
@@ -22,7 +22,7 @@ code_files:
 - {name: DataSource/DataSource.swift, path: Code/DataSource/data_source.swift.liquid}
 
 # Router layer
-- {name: Router/Coordinator.swift, path: Code/Router/coordinator.swift.liquid}
+- {name: Router/RouterProtocol.swift, path: Code/Router/router_protocol.swift.liquid}
 - {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
 
 # Assembly

@@ -9,11 +9,15 @@
 import UIKit
 
 class {{ module_info.name }}ViewController: UIViewController {
-  var delegate: {{ module_info.name }}ViewDelegate!
+    var delegate: {{ module_info.name }}ViewDelegate!
 
-  // MARK: Life cycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    delegate.viewIsReady()
-  }
+    // MARK: Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegate.viewIsReady()
+    }
+
+    func setupInitialState() {
+    
+    }
 }
