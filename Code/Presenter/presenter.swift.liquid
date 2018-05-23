@@ -6,22 +6,30 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-class {{ module_info.name }}Presenter {
+import PromiseKit
+
+class {{ module_info.name }}Presenter: Presenter {
     weak var view: {{ module_info.name }}ViewController?
     var dataSource: {{ module_info.name }}DataSourceProtocol!
     var router: {{ module_info.name }}RouterProtocol!
+
+    override func viewIsReady() {
+        super.viewIsReady()
+        view?.setupInitialState()
+    }
+    
+    override func viewIsDeallocated() {
+        super.viewIsDeallocated()
+    }
 }
 
 // MARK: - Module Protocol
 extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleProtocol {
-
 }
 
 // MARK: - View Delegate
 extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewDelegate {
-    func viewIsReady() {
-        view?.setupInitialState()
-    }
+    
 }
 
 // MARK: - DataSource Delegate

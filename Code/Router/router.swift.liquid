@@ -7,9 +7,11 @@
 //
 
 class {{ module_info.name }}Router: Router {
-    weak var interfaceManager: DefaultInterfaceManager?
+    var interfaceManager: DefaultInterfaceManager!
 }
 
 extension {{ module_info.name }}Router: {{ module_info.name }}RouterProtocol {
-	
+    func close(_ animated: Bool, with completionHandler: (() -> Void)?) {
+        closeCurrentModule(animated: animated, with: completionHandler)
+    }
 }

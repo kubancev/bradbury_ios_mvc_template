@@ -7,7 +7,9 @@
 //
 
 import ViperKit
+import PromiseKit
 
-protocol {{ module_info.name }}ModuleProtocol: ModuleProtocol {
-
+protocol {{ module_info.name }}ModuleProtocol: ModuleInput {
+    func loaded() -> Promise<Bool>
+    func deallocated() -> Promise<Bool>
 }

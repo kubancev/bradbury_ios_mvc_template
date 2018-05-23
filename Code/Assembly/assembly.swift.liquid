@@ -16,6 +16,7 @@ class {{ module_info.name }}ModuleAssembly: Assembly {
         // View
         container.storyboardInitCompleted({{ module_info.name }}ViewController.self, initCompleted: { (r, c) in
             c.delegate = r.resolve({{ module_info.name }}ModuleProtocol.self, argument: c) as! {{ module_info.name }}ViewDelegate
+            c.moduleInput = c.delegate as? ModuleInput
         })
 
         // Presenter
@@ -30,7 +31,7 @@ class {{ module_info.name }}ModuleAssembly: Assembly {
         }
 
         // Router
-        container.register({{ module_info.name }}RouterProtocol.self) { (r, v: TransitionHandler) in
+        container.register({{ module_info.name }}RouterProtocol.self) { (r, v: TransitionHandler?) in
             let router = {{ module_info.name }}Router()
             router.transitionHandler = v
             router.interfaceManager = r.resolve(DefaultInterfaceManager.self)
