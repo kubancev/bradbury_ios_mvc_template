@@ -2,7 +2,7 @@
 name: bradburylab_mvc
 summary: bradburylab_mvc
 author: BradburyLab
-version: 1.2.1
+version: 1.2.2
 license: MIT
 
 # The declarations for code files
@@ -18,7 +18,7 @@ code_files:
 
 # DataSource layer
 - {name: DataSource/DataSourceProtocol.swift, path: Code/DataSource/data_source_protocol.swift.liquid}
-- {name: DataSource/DataSourceOutput.swift, path: Code/DataSource/data_source_delegate.swift.liquid}
+- {name: DataSource/DataSourceDelegate.swift, path: Code/DataSource/data_source_delegate.swift.liquid}
 - {name: DataSource/DataSource.swift, path: Code/DataSource/data_source.swift.liquid}
 
 # Router layer
