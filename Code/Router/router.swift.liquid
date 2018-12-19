@@ -1,5 +1,5 @@
 //
-//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
 //  Created by {{ developer.name }} on {{ date }}.
@@ -7,7 +7,7 @@
 //
 
 class {{ module_info.name }}Router: Router {
-    var interfaceManager: DefaultInterfaceManager!
+    var interfaceManager: DefaultInterfaceManagerProtocol!
 }
 
 extension {{ module_info.name }}Router: {{ module_info.name }}RouterProtocol {

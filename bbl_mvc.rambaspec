@@ -1,8 +1,8 @@
 # Template information section
-name: bradburylab_mvc
-summary: bradburylab_mvc
+name: bbl_mvc
+summary: bbl_mvc
 author: BradburyLab
-version: 1.2.3
+version: 1.3.0
 license: MIT
 
 # The declarations for code files
